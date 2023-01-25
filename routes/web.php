@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', '\App\Http\Controllers\PrincipalController@principal');
+Route::get('/', '\App\Http\Controllers\PrincipalController@principal')->name('site.index');
 
-Route::get('/sobre-nos', '\App\Http\Controllers\SobreNosController@sobreNos');
+Route::get('/sobre-nos', '\App\Http\Controllers\SobreNosController@sobreNos')->name('site.sobrenos');
 
-Route::get('/contato', '\App\Http\Controllers\ContatoController@contato');
+Route::get('/contato', '\App\Http\Controllers\ContatoController@contato')->name('site.contato');
 
 Route::get('/login', function(){
     return 'login';
@@ -29,15 +29,15 @@ Route::prefix('/app')->group(function(){
    
     Route::get('/clientes', function(){
         return 'clientes';
-    });
+    })->name('app.clientes');
     
     Route::get('/fornecedores', function(){
         return 'fornecedores';
-    });
+    })->name('app.fornecedores');
     
     Route::get('/produtos', function(){
         return 'produtos';
-    });
+    })->name('app.produtos');
 
 });
 
