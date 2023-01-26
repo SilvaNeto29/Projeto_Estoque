@@ -41,5 +41,8 @@ Route::prefix('/app')->group(function(){
 
 });
 
+Route::get('/teste/{p1}/{p2}', '\App\Http\Controllers\TesteController@teste')->name('teste');
 
-
+Route::fallback(function(){
+    echo 'A rota não existe. <a href="'.route('site.index').'">Clique aqui<a/> para voltar a principal';
+});
