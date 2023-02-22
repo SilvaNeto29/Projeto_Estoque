@@ -1,22 +1,8 @@
-@extends('site.layouts.basico');
-
+@extends('site.layouts.basico')
+@section('titulo',$titulo)
 @section('conteudo')
 
-        <div class="topo">
-
-            <div class="logo">
-                <img src="/img/logo.png">
-            </div>
-
-            <div class="menu">
-                <ul>
-                    <li><a href="{{ route('site.index') }}">Principal</a></li>
-                    <li><a href="{{ route('site.sobrenos') }}">Sobre Nós</a></li>
-                    <li><a href="{{ route('site.contato') }}">Contato</a></li>
-                </ul>
-            </div>
-        </div>
-
+    
         <div class="conteudo-pagina">
             <div class="titulo-pagina">
                 <h1>Entre em contato conosco</h1>
@@ -24,21 +10,22 @@
 
             <div class="informacao-pagina">
                 <div class="contato-principal">
-                    <form>
-                        <input type="text" placeholder="Nome" class="borda-preta">
+                    <form action="{{ route('site.contato') }} " method="POST" >
+                        @csrf
+                        <input type="text" placeholder="Nome" class="borda-preta" name="nome">
                         <br>
-                        <input type="text" placeholder="Telefone" class="borda-preta">
+                        <input type="text" placeholder="Telefone" class="borda-preta" name="telefone">
                         <br>
-                        <input type="text" placeholder="E-mail" class="borda-preta">
+                        <input type="text" placeholder="E-mail" class="borda-preta" name="email">
                         <br>
-                        <select class="borda-preta">
-                            <option value="">Qual o motivo do contato?</option>
-                            <option value="">Dúvida</option>
-                            <option value="">Elogio</option>
-                            <option value="">Reclamação</option>
+                        <select class="borda-preta" name="motivoContato">
+                            <option value="1">Qual o motivo do contato?</option>
+                            <option value="2">Dúvida</option>
+                            <option value="3">Elogio</option>
+                            <option value="4">Reclamação</option>
                         </select>
                         <br>
-                        <textarea class="borda-preta">Preencha aqui a sua mensagem</textarea>
+                        <textarea class="borda-preta" name="textarea">Preencha aqui a sua mensagem</textarea>
                         <br>
                         <button type="submit" class="borda-preta">ENVIAR</button>
                     </form>

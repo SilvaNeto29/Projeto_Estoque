@@ -1,20 +1,8 @@
 @extends('site.layouts.basico')
-
+@section('titulo',$titulo)
 @section('conteudo')
-        <div class="topo">
 
-            <div class="logo">
-                <img src="img/logo.png">
-            </div>
-
-            <div class="menu">
-                <ul>
-                    <li><a href="{{ route('site.index') }}">Principal</a></li>
-                    <li><a href="{{ route('site.sobrenos') }}">Sobre Nós</a></li>
-                    <li><a href="{{ route('site.contato') }}">Contato</a></li>
-                </ul>
-            </div>
-        </div>
+    
 
         <div class="conteudo-destaque">
         
@@ -49,7 +37,7 @@
                         <input type="text" placeholder="E-mail" class="borda-branca">
                         <br>
                         <select class="borda-branca">
-                            <option value="">Qual o motivo do contato?</option>
+                            <option value="">Qual o motivo do contato?</option> 
                             <option value="">Dúvida</option>
                             <option value="">Elogio</option>
                             <option value="">Reclamação</option>
