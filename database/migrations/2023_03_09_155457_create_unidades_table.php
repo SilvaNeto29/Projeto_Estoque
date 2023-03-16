@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::table('produto', function(Blueprint $table){
+        Schema::table('produtos', function(Blueprint $table){
             $table->unsignedBigInteger('unidade_id');
             $table->foreign('unidade_id')->references('id')->on('unidades');
         });        
@@ -41,7 +41,7 @@ return new class extends Migration
     public function down()
     {
 
-        Schema::table('produtos_detalhes', function (Blueprint $table){
+        Schema::table('produto_detalhes', function (Blueprint $table){
             $table->dropForeign('produtos_detalhes_unidade_id_foreign');
             $table->dropColumn('unidade_id');
         });        
