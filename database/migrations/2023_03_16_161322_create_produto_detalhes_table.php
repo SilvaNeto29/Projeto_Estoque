@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('produto_detalhes', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger("produto_id");
+            $table->unsignedBigInteger("produto_id");
             $table->float("comprimento",8,2);
             $table->float("altura",8,2);
             $table->float("largura",8,2);
